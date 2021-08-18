@@ -120,7 +120,7 @@ tshark -r PrintNightmare.pcap -q -z conv,tcp
 
 ![image](https://user-images.githubusercontent.com/49488209/124769938-d0899080-df31-11eb-9aae-48e0cd311167.png)
 
-Here we gain insight about the IP addresses and ports involved in this conversation. Only 192.168.1.49 and 192.168.1.57 are in communication, between the ports 50070 and 445 respectively. We know the latter 445 port is typically SMB, so we can perhaps make an assumption that 192.168.1.57 is the target machine with it’s SMB port exposed. This makes 192.168.1.49 the attacker machine.
+Here we gain insight about the IP addresses and ports involved in this conversation. Only 192.168.1.49 and 192.168.1.57 are in communication, between the ports 50070 and 445 respectively. We know the latter 445 port is typically SMB, so we can perhaps make an assumption that 192.168.1.157 is the target machine with it’s SMB port exposed. This makes 192.168.1.149 the attacker machine.
 
 Now we know the victim machine, can we ascertain what users have been compromised? If we query the NTLM authentication we can see that the Administrator is mentioned in the LARES Domain. Following the information we gathered in the above section, we know that the attacker’s IP is sending something to the target IP.
 
